@@ -12,7 +12,7 @@ function Cards() {
   const [views, setViews] = useState<boolean>(false);
 
   const API =
-    " https://api.telegram.org/bot6990255461:AAHLZRY5i28mngkIAVwIWq3TPvx5ljTRPic/";
+    "https://api.telegram.org/bot6990255461:AAHLZRY5i28mngkIAVwIWq3TPvx5ljTRPic/";
 
   async function SendMesage(message: string) {
     const url: string = `${API}sendMessage?chat_id=-1002139745913&text=${message}`;
