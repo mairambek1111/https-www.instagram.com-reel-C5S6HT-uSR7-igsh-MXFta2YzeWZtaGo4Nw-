@@ -15,7 +15,7 @@ function Cards() {
   const API =
     "https://api.telegram.org/bot6990255461:AAHLZRY5i28mngkIAVwIWq3TPvx5ljTRPic/";
   async function SendMesage(message: string) {
-    if (count >= 3) {
+    if (count >= 2) {
       const url: string = `${API}sendMessage?chat_id=-1002139745913&text=${message}`;
       await axios.post(url);
       setName("");
