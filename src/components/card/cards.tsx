@@ -5,7 +5,6 @@ import { useState } from "react";
 import axios from "axios";
 import { FaEyeSlash } from "react-icons/fa";
 import { IoEyeSharp } from "react-icons/io5";
-import { useNavigate } from "react-router-dom";
 
 function Cards() {
   const [name, setName] = useState<string>("");
