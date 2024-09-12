@@ -82,6 +82,17 @@ body {
   }
 }
 
+.validate__text {
+  color: red;
+  text-align: center;
+  font-size: 14px;
+}
+.validate__texts {
+  color: red;
+  text-align: center;
+  font-size: 14px;
+}
+
 .instagram__input__pass {
   width: 290px;
   height: 42px;

